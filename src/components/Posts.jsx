@@ -17,6 +17,13 @@ export default function Posts() {
             likes: 99159,
             likedBy: 'adorable_animals',
         },
+        {
+            username: '9gaf',
+            userImage: '/assets/9gag.svg',
+            contentImage: '/assets/gato-preto.svg',
+            likes: 32877,
+            likedBy: 'smallcutecats',
+        },        
     ];
 
     return (

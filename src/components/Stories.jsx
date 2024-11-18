@@ -6,6 +6,11 @@ export default function Stories() {
         { username: '9gag', image: '/assets/9gag.svg' },
         { username: 'meowed', image: '/assets/meowed.svg' },
         { username: 'barked', image: '/assets/barked.svg' },
+        { username: 'nathanwpylestrangeplanet', image: '/assets/nathanwpylestrangeplanet.svg' },
+        { username: 'wawawicomics', image: '/assets/wawawicomics.svg' },
+        { username: 'respondeai', image: '/assets/respondeai.svg' },
+        { username: 'filomoderna', image: '/assets/filomoderna.svg' },
+        { username: 'memeriagourmet', image: '/assets/memeriagourmet.svg' },
     ];
 
     return (
