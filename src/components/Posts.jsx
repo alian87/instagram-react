@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Posts() {
-    const posts = [
+    const [posts, setPosts] = useState([
         {
             username: 'meowed',
             userImage: 'assets/meowed.svg',
             contentImage: 'assets/gato-telefone.svg',
             likes: 101523,
             likedBy: 'respondeai',
+            isLiked: false,
         },
         {
             username: 'barked',
@@ -15,8 +16,35 @@ export default function Posts() {
             contentImage: 'assets/dog.svg',
             likes: 99159,
             likedBy: 'adorable_animals',
+            isLiked: false,
         },
-    ];
+    ]);
+
+    const toggleLike = (index) => {
+        const updatedPosts = [...posts];
+        const post = updatedPosts[index];
+
+        // Alterna o estado de curtida
+        post.isLiked = !post.isLiked;
+
+        // Atualiza a contagem de likes
+        post.likes += post.isLiked ? 1 : -1;
+
+        setPosts(updatedPosts);
+    };
+
+    const likeOnImage = (index) => {
+        const updatedPosts = [...posts];
+        const post = updatedPosts[index];
+
+        // Apenas adiciona curtida, não remove
+        if (!post.isLiked) {
+            post.isLiked = true;
+            post.likes += 1;
+        }
+
+        setPosts(updatedPosts);
+    };
 
     return (
         <div className="posts">
@@ -32,12 +60,24 @@ export default function Posts() {
                         </div>
                     </div>
                     <div className="conteudo">
-                        <img src={post.contentImage} alt="post content" />
+                        <img
+                            src={post.contentImage}
+                            alt="post content"
+                            onClick={() => likeOnImage(index)}
+                            style={{ cursor: 'pointer' }}
+                        />
                     </div>
                     <div className="fundo">
                         <div className="acoes">
                             <div>
-                                <ion-icon name="heart-outline"></ion-icon>
+                                <ion-icon
+                                    name={post.isLiked ? 'heart' : 'heart-outline'}
+                                    style={{
+                                        color: post.isLiked ? 'red' : 'inherit',
+                                        cursor: 'pointer',
+                                    }}
+                                    onClick={() => toggleLike(index)}
+                                ></ion-icon>
                                 <ion-icon name="chatbubble-outline"></ion-icon>
                                 <ion-icon name="paper-plane-outline"></ion-icon>
                             </div>
