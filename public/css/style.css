@@ -64,6 +64,9 @@ body {
   border: 1px solid #DBDBDB;
   color: #979797;
   text-align: center;
+  font-size: 13px;
+  font-weight: normal;
+  font-family: sans-serif;
 }
 
 .navbar .icones ion-icon {
@@ -116,7 +119,7 @@ body {
   align-items: center;
   height: 66px;
   width: 66px;
-  background-image: url('../assets/img/story-circle.svg');
+  background-image: url('../assets/story-circle.svg');
   
 }
 

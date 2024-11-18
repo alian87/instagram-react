@@ -1,4 +1,5 @@
 import React from 'react';
+import Story from './Story';
 
 export default function Stories() {
     const stories = [
@@ -10,12 +11,7 @@ export default function Stories() {
     return (
         <div className="stories">
             {stories.map((story, index) => (
-                <div className="story" key={index}>
-                    <div className="imagem">
-                        <img src={story.image} alt={story.username} />
-                    </div>
-                    <div className="usuario">{story.username}</div>
-                </div>
+                <Story key={index} username={story.username} image={story.image} />
             ))}
             <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
